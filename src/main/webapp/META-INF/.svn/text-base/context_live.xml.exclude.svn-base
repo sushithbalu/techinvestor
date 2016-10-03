@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context reloadable="true" useHttpOnly="false">
+        <!-- Specify a JDBC mysql datasource -->
+
+        <Resource name="jdbc/msfpool" auth="Container" type="javax.sql.DataSource"
+                maxActive="100" maxIdle="30" maxWait="10000" initialSize="2" minIdle="2" username="root" password="roadrunner"
+                driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://192.168.200.14:3306/init_emt3?autoReconnect=true"
+                validationQuery="SELECT 1" />
+
+        <Resource name="jdbc/mpinpool" auth="Container" type="javax.sql.DataSource"
+                maxActive="100" maxIdle="30" maxWait="-1" initialSize="5" minIdle="5" username="mpinuser" password="mpin120120*"
+                driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+                url="jdbc:sqlserver://192.168.200.4:1433;DatabaseName=EdelPortfolio"
+                validationQuery="SELECT 1" />
+        
+        <Resource name="jdbc/edelretailpool" auth="Container" type="javax.sql.DataSource"
+                maxActive="100" maxIdle="30" maxWait="-1" initialSize="5" minIdle="5" username="MSF" password="msf~"
+                driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+                url="jdbc:sqlserver://192.168.200.4:1433;DatabaseName=EdelRetail"
+                validationQuery="SELECT 1" />
+              
+        <Resource name="jdbc/edelmfpool" auth="Container" type="javax.sql.DataSource"
+                maxActive="100" maxIdle="30" maxWait="-1" initialSize="5" minIdle="5" username="MSF" password="msf~"
+                driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+                url="jdbc:sqlserver://192.168.200.4:1433;DatabaseName=EdelMF"
+                validationQuery="SELECT 1" />
+                
+        <Resource name="jdbc/edelderivativespool" auth="Container" type="javax.sql.DataSource"
+                maxActive="100" maxIdle="30" maxWait="-1" initialSize="5" username="MSF" password="msf~"
+                driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+                url="jdbc:sqlserver://192.168.200.4:1433;DatabaseName=Edel_Derivatives"
+                validationQuery="SELECT 1" />
+                
+        <Resource name="jdbc/msfquotepool" auth="Container" type="javax.sql.DataSource"
+                maxActive="100" maxIdle="30" maxWait="-1" initialSize="5" minIdle="5" username="root" password="roadrunner"
+                driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://192.168.200.14:3306/quote_data?autoReconnect=true"
+                validationQuery="SELECT 1" />
+                
+        <Resource name="jdbc/pushpool" auth="Container" type="javax.sql.DataSource"
+                username="root" password="roadrunner" initialSize="2" minIdle="2" driverClassName="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://192.168.200.14:3306/push_notification?autoReconnect=true"
+                maxActive="100" maxIdle="10" validationQuery="SELECT 1" testWhileIdle="true"
+                timeBetweenEvictionRunsMillis="60000" />
+      <WatchedResource>WEB-INF/web.xml</WatchedResource>          
+                
+</Context>
